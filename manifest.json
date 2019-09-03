@@ -10,10 +10,10 @@
    } ],
    "browser_action": {
       "default_icon": "images/private.png",
-      "default_title": "Duck Duck Sometimes",
+      "default_title": "DuckDuckSometimes",
       "default_popup": "popup.html"
    },
-   "description": "asd",
+   "description": "Redirect some of your Google searches to DuckDuckGo",
    "icons": { 
       "32": "images/private.png",
       "48": "images/private.png",
@@ -22,6 +22,6 @@
    "manifest_version": 2,
    "name": "DuckDuckSometimes",
    "short_name": "DuckDuckSometimes",
-   "permissions": [ "webRequest", "storage" , "tabs", "alarms", "notifications" ],
-   "version": "1.0.41"
+   "permissions": [ "storage" ],
+   "version": "1.0.0"
 }
