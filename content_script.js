@@ -7,11 +7,28 @@ if(current_results_page == '1'){
     query = document.getElementsByClassName('gLFyf gsfi')[0].value
     //console.log(query)
 
+    chrome.storage.sync.get('keywords', function(data) {
+
+      const queryArray = query.split(' ');
+      const keywordsArray = data.keywords.split(',');
+
+      let containsDdgKeywords = keywordsArray.some(keyword => queryArray.indexOf(keyword.replace(' ', '')) !== -1);
+
+      if( containsDdgKeywords ){
+          console.log('Yeeey! We have some DDG keywords in the query!')
+          window.location = 'https://www.duckduckgo.com?q='+query
+      }
+
+    });
+
+
+
+
     // Get the percentage
     chrome.storage.sync.get('percentage', function(data) {
 
         console.log(data.percentage)
-        
+
         // Redirect the user to Duck Duck Go
         var d = Math.random();
         //console.log(d)
@@ -21,5 +38,5 @@ if(current_results_page == '1'){
         }
 
     });
-    
+
 }
